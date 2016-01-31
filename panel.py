@@ -1,4 +1,8 @@
 import bpy
+import bpy,bgl,blf
+from bpy.types import Menu
+import os
+import bmesh
 
 class n5(bpy.types.Panel):
     bl_idname = "n"
@@ -12,7 +16,7 @@ class n5(bpy.types.Panel):
         
         layout.label("text")
         layout.menu("view3d.nmenu", text = "N5 Menu")
-        row.template_icon_view(WM, "nexus_five_previews")
+        layout.template_icon_view(WM, "nexus_five_previews")
         
 class N5Menu(bpy.types.Menu):
     bl_idname = "view3d.nmenu"
@@ -22,7 +26,7 @@ class N5Menu(bpy.types.Menu):
         layout = self.layout
         
         layout.label("text")
-        
+        layout.template_icon_view(WM, "nexus_five_previews")
 
         
                 

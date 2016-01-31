@@ -56,10 +56,10 @@ def register():
     global addon_keymaps
     wm = bpy.context.window_manager
     km = wm.keyconfigs.addon.keymaps.new(name = "3D View", space_type = "VIEW_3D")
-    kmi = km.keymap_items.new('view3d.nmenu', 'Y', ctrl = False, shift = False, alt = False) 
+    kmi = km.keymap_items.new('view3d.nmenu', 'Y', 'PRESS', ctrl = False, shift = False, alt=False) 
     kmi.active = True
     
-    addon_keymaps.append(km, kmi)
+    addon_keymaps.append(kmi)
 
 def unregister():
     try: bpy.utils.unregister_module(__name__)
